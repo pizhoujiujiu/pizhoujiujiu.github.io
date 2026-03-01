@@ -1,1 +1,452 @@
-你好九九
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>九九科技 - 人工智能创新引领者</title>
+    <style>
+        /* 全局样式重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* 基础样式 */
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 导航栏样式 */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+
+        .logo span {
+            color: #3498db;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: #2c3e50;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #3498db;
+        }
+
+        /* 英雄区样式 */
+        .hero {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: #fff;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #3498db;
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #2980b9;
+        }
+
+        /* 关于我们 */
+        .about {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 60px;
+            color: #2c3e50;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: #3498db;
+            margin: 20px auto;
+        }
+
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-text h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        .about-img {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-img img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* 业务板块 */
+        .services {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-card h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .service-card p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        /* 团队优势 */
+        .team {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .team-member {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 5px solid #f8f9fa;
+        }
+
+        .team-member h3 {
+            font-size: 18px;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .team-member p {
+            color: #777;
+            font-size: 14px;
+        }
+
+        /* 联系我们 */
+        .contact {
+            padding: 80px 0;
+            background-color: #2c3e50;
+            color: #fff;
+        }
+
+        .contact-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .contact-info h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: rgba(255,255,255,0.1);
+            color: #fff;
+            font-size: 16px;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: #1a2530;
+            color: #fff;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        footer p {
+            opacity: 0.8;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .section-title {
+                font-size: 30px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header>
+        <div class="container navbar">
+            <div class="logo">九九<span>科技</span></div>
+            <ul class="nav-links">
+                <li><a href="#home">首页</a></li>
+                <li><a href="#about">关于我们</a></li>
+                <li><a href="#services">核心业务</a></li>
+                <li><a href="#team">核心团队</a></li>
+                <li><a href="#contact">联系我们</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- 英雄区 -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>用人工智能重塑未来</h1>
+            <p>九九科技是一个专注于人工智能技术研发与应用的创新型科技团队，致力于为各行业提供领先的AI解决方案，推动产业智能化升级，创造可持续的商业价值。</p>
+            <button class="btn">了解更多</button>
+        </div>
+    </section>
+
+    <!-- 关于我们 -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">关于我们</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>我们的使命：让AI赋能每一个行业</h3>
+                    <p>九九科技成立于2026年，总部位于江苏省邳州市戴圩街道连渊村。团队汇聚了来自全球顶尖高校和科技企业的AI专家、工程师和行业顾问，核心团队拥有平均10年以上的人工智能研发与落地经验。</p>
+                    <p>我们坚持以技术创新为核心驱动力，专注于机器学习、计算机视觉、自然语言处理、大语言模型等前沿AI技术的研发与产业化应用。</p>
+                    <p>公司始终秉承"技术向善、价值创造"的理念，致力于将先进的人工智能技术转化为可落地的行业解决方案，帮助客户降本增效、创新发展。</p>
+                    <button class="btn">查看发展历程</button>
+                </div>
+                <div class="about-img">
+                    <img src="https://picsum.photos/800/500?random=1" alt="公司办公环境">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 核心业务 -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">核心业务</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>企业级AI解决方案</h3>
+                    <p>为金融、制造、零售、医疗等行业定制端到端的AI解决方案，包括智能决策系统、流程自动化、数据智能分析等，帮助企业实现数字化转型。</p>
+                    <a href="#" class="btn">了解详情</a>
+                </div>
+                <div class="service-card">
+                    <h3>大语言模型应用开发</h3>
+                    <p>基于自研大语言模型，提供智能客服、内容生成、知识库问答、代码辅助等场景化应用开发与部署服务，支持私有化部署。</p>
+                    <a href="#" class="btn">了解详情</a>
+                </div>
+                <div class="service-card">
+                    <h3>计算机视觉技术</h3>
+                    <p>提供人脸识别、目标检测、图像分割、OCR识别等计算机视觉技术服务，广泛应用于安防、工业质检、智慧零售等领域。</p>
+                    <a href="#" class="btn">了解详情</a>
+                </div>
+                <div class="service-card">
+                    <h3>AI技术咨询与培训</h3>
+                    <p>为企业提供AI战略规划、技术选型、人才培养等一站式咨询与培训服务，帮助企业建立AI能力体系，加速AI落地。</p>
+                    <a href="#" class="btn">了解详情</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 核心团队 -->
+    <section class="team" id="team">
+        <div class="container">
+            <h2 class="section-title">核心团队</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="https://picsum.photos/200/200?random=2" alt="张教授">
+                    <h3>周立国 博士</h3>
+                    <p>技术总监 | 慕尼黑工业大学博士</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://picsum.photos/200/200?random=3" alt="李总">
+                    <h3>魏贤婷</h3>
+                    <p>运营总监 | 十年AI行业从业经验</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系我们 -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title" style="color: #fff;">联系我们</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>欢迎与我们取得联系</h3>
+                    <p><strong>总部地址：</strong>江苏省邳州市戴圩街道连渊村</p>
+                    <p><strong>联系电话：</strong>400-888-9999</p>
+                    <p><strong>电子邮箱：</strong>contact@pizhoujiujiu.com</p>
+                    <p><strong>工作时间：</strong>周一至周五 9:00-18:00</p>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="您的姓名" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="您的邮箱" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea rows="5" placeholder="您的需求或问题" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">提交</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <p>© 2026 邳州九九科技工作室 版权所有</p>
+        </div>
+    </footer>
+</body>
+</html>
